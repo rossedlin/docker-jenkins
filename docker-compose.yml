@@ -1,7 +1,8 @@
 version: '2'
 services:
   web:
-    image: jenkins/jenkins:lts
+    image: rossedlin/jenkins:lts
+    build: .
     container_name: jenkins
     user: jenkins
     volumes:
