@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: jenkins
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - home:/var/jenkins_home
+    environment:
+      JENKINS_HOST_HOME: "/data/jenkins"
+    ports:
+      - "8080:8080"
+#      - "5000:5000"
+      - "50000:50000"
+
+volumes:
+  home:
